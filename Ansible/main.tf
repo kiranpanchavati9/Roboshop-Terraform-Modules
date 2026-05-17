@@ -19,13 +19,19 @@ resource "null_resource" "post-config" {
       "sleep 60",
 
       # Install required packages
-      "sudo dnf install -y python3 git ansible",
+      "sudo dnf install -y python3 python3-pip git",
+
+      # Install ansible
+      "sudo pip3 install ansible-core",
+
+      # Refresh shell hash
+      "hash -r",
 
       # Verify ansible
       "ansible --version",
 
       # Execute ansible-pull
-      "ansible-pull -i localhost, -U https://github.com/kiranpanchavati9/Roboshop-Ansible-Template-New.git playbooks/${var.component_name}.yml -e env=dev -vvv; exit 0"
+      "ansible-pull -i localhost, -U https://github.com/kiranpanchavati9/Roboshop-Ansible-Template-New.git playbooks/${var.component_name}.yml -e env=dev -vvv"
     ]
   }
 }
