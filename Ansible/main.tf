@@ -24,6 +24,9 @@ resource "null_resource" "post-config" {
       # Install ansible
       "sudo pip3 install ansible-core",
 
+      # Install required ansible collection
+      "ansible-galaxy collection install ansible.posix",
+
       # Refresh shell hash
       "hash -r",
 
