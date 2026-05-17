@@ -4,7 +4,8 @@ resource "aws_instance" "main" {
   vpc_security_group_ids = var.vpc_sg_id
   iam_instance_profile   = var.iam_role
 
+
   tags = {
-    Name        = "Test"
+    Name        =  var.component_name
   }
 }

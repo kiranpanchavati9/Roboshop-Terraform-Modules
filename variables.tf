@@ -13,3 +13,21 @@ variable "vpc_sg_id" {
 variable "iam_role" {
   default = "workstation-role"
 }
+
+variable "zone_id" {
+  default = "Z01214421PKKTLXAI5VN5"
+}
+
+variable "dns_type" {
+  default = "A"
+}
+
+variable "ttl" {
+  default = "300"
+}
+
+variable "component_name" {
+  default = "test"
+}
+
+
