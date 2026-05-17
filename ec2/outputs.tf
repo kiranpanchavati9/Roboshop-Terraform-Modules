@@ -1,3 +1,5 @@
 output "ec2" {
-  value = aws_instance.main
+  value = {
+    private_ip = aws_instance.main.private_ip
+  }
 }

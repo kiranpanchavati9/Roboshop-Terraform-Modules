@@ -19,7 +19,7 @@ module "route53" {
   dns_type = var.dns_type
   ttl = var.ttl
   component_name = each.key
-  private_ip = module.ec2.ec2.private_ip
+  private_ip = module.ec2[each.key].ec2.private_ip
 }
 
 module "ansible"{
@@ -32,6 +32,6 @@ module "ansible"{
 
   source = "./Ansible"
   component_name = each.key
-  private_ip = module.ec2.ec2.private_ip
+  private_ip = module.ec2[each.key].ec2.private_ip
 
 }
