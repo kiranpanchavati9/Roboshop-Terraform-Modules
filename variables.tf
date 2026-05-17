@@ -27,7 +27,18 @@ variable "ttl" {
 }
 
 variable "component_name" {
-  default = "test"
+  default = {
+    "frontend" = ""
+    "mongodb" = ""
+    "mysql" = ""
+    "redis" = ""
+    "cart" = ""
+    "rabbitmq" = ""
+    "catalogue" = ""
+    "user" = ""
+    "shipping" = ""
+    "payment" = ""
+  }
 }
 
 
